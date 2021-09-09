@@ -1,0 +1,380 @@
+/*-------Importaciones de estilos y fonts---------*/
+@import url(main.css);
+@import url(footer.css);
+
+/*----------Estilos Universales---------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2b89a0;
+    height: 3px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    transition: all 1s;
+    animation: aparecer 1s linear;
+    animation-delay: 0.5s;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.header {
+    height: 90px;
+    color: #333;
+    background: #eee;
+}
+
+.menu-btn {
+    margin-right: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger {
+    width: 30px;
+    height: 4px;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    background: #333;
+
+}
+
+.menu-btn-burger::before, .menu-btn-burger::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #333;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger::before {
+    transform: translateY(-8px);
+}
+
+.menu-btn-burger::after {
+    transform: translateY(8px);
+}
+
+.menu-btn.open .menu-btn-burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn-burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn-burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+@media (min-width:750px){
+    .header {
+        height: 160px;
+    }
+    
+    .menu-btn {
+        display: none;
+    }
+}
+
+
+/*-----------------------------cabecera-------------------------*/
+
+.cabecera__img {
+    object-fit: contain;
+    height: 80px;
+    width: 80px;
+    margin: 5px 0px 5px 13px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecera__title {
+    margin-right: 20px;
+    color: #333;
+    margin-top: 6px;
+    margin-left: 10px;
+    font-weight: 600;
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .cabecera {
+        width: 98%;
+    }
+}
+
+@media (min-width:750px) {
+    .cabecera__title{
+        transition: display .3s;
+        font-size: 30px;
+        display: block;
+        line-height: 3;
+    }
+
+    .cabecera__img {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+/*-----------------------------Menu de NavegaciÃ³n--------------------*/
+
+.menu {
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    list-style: none;
+    background: #2b89a0;
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu__link {
+    width: 100%;
+    display: block;
+    padding: 13px 10px;
+    color: #fff;
+    font-size: 20px;
+    background: rgba(0,0,0,.2);
+    text-decoration: none;
+    border-bottom:2px solid #333;
+    border-right: 2px solid #333;
+}
+
+.menu__link--select {
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 13px 10px;
+    border-bottom: 2px solid #333;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    background: rgba(0,0,0,.2);
+}
+
+.menu__link:hover, .menu__link--select:hover {
+    background: rgba(0,0,0,.5);
+}
+
+.li__navigation{
+    position: relative;
+}
+
+@media (min-width:750px){
+    .menu {
+        transform: translateX(0);
+        display: flex;
+        width: auto;
+        height: auto;
+        position: static;
+        justify-content: center;
+    }
+
+    .menu__link {
+        border: none;
+        width: none;
+        background: none;
+        color: #000;
+    }
+
+    .menu__link--select {
+        border: none;
+        background: none;
+        color: #fff;
+    }
+
+    .menu__link:hover, .menu__link--select:hover {
+        background: none;
+        color: #fff;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .menu__link {
+        font-size: 14px;
+    }
+}
+
+.abrir {
+ transform: translateX(0%);
+}
+
+
+
+/*---------------------------Subemenus-----------------------*/
+
+.submenu__li{
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    display:block;
+    background: rgba(0,0,0,.3);
+    z-index: 100;
+    padding: 16px;
+}
+
+.submenu .sub__menu {
+    list-style: none;
+    position: static; 
+    background: #2b89a0;
+    
+}
+
+.sub__menu {
+    display: none;
+}
+
+.submenu__li:hover {
+    background: rgba(0,0,0,.6);
+}
+
+.icon-arrow {
+    position: absolute;
+    right: 10px;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+@media (min-width:750px) {
+    .submenu .sub__menu{
+        box-shadow: 3px 3px 5px #000;
+        position: absolute;
+    }
+    .submenu__li {
+        display: inline-block;
+        width: 190px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .icon-arrow {
+        position: static;
+        padding-left: 2px;
+        font-size: 18px;
+        font-weight:100;
+    }
+    
+}
+
+.desplegar {
+    display: none;
+}
+
+/*------------------------------Icon of whatsapp----------------------------*/
+
+.icon-whatsapp {
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    width: 55px;
+    padding-top: 8px;
+    height: 55px;
+    bottom: 30px;
+    left: 20px;
+    background: #37DA10;
+    color: #fff;
+    font-size: 38px;
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+    margin: 5px;
+}
+
+
+.icon-whatsapp:hover {
+    background: #fff;
+    color:#37DA10;
+    cursor: pointer; 
+}
+
+/*------------------------------icon of message----------------------*/
+
+.icon-envelope {
+    text-align: center;
+    z-index: 5000;
+    text-decoration: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 20px;
+    font-size: 27px;
+    line-height: 57px;
+    background: #37e;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon-envelope:hover {
+    background: #fff;
+    color:rgb(39, 108, 228);
+}
+
+.content__message {
+    z-index:5000;
+    color: #000;
+    width: 150px;
+    height: 90px;
+    border-radius: 10px;
+    border: 3px solid rgb(39, 108, 228);
+    background: #fff;
+    position: fixed;
+    right: 40px;
+    bottom: 95px;
+}
+
+.message__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 25px auto;
+    text-align: center;
+}

@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+.footer {
+    margin-top: 20px;
+    background: #2b89a0; 
+    color: #fff;
+    padding: 13px;
+}
+/*-------------------Contact info-------------------*/
+.contact-info {
+    margin: 10px 20px 0 0;
+    padding: 10px 5px;
+    line-height: 2;
+    text-align: center;
+}
+
+.contact__title {
+    position: static;
+}
+
+
+.contact-info ul {
+    list-style: none;
+}
+
+
+.icon-envelope, .icon-phone {
+    padding-right: 4px;
+    display: inline-block;
+}
+
+#envelope-text {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    text-decoration: none;
+}
+
+#phone-text {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*---------footer section---------*/
+
+.footer-section {
+    padding: 16px;
+    max-width: 836.1px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;  
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+/*------------mapa-------------*/
+
+.adress__map {
+    margin: 5px auto;
+}
+
+.map {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 250px;
+}
+
+/*--------------------responsive---------------*/
+
+@media (min-width: 720px) {
+    
+    .footer-section {
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-section {
+        display: flex;
+    }
+    
+    .contact-info {
+        margin: 30px 60px 30px 20px;
+    }
+
+    .map {
+        width: 450px;
+        height: 300px;
+    }
+    
+}
+
+/*-----------------iconos----footer------*/
+
+.social__media {
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-facebook, .icon-instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 50%;
+    margin: 8px;
+    background: #2b89a0;
+    box-shadow: 0 0 30px -10px #000;
+}
+
+.icon-facebook:hover, .icon-instagram:hover {
+    background: #fff;
+    color: #2b89a0;
+}
+
+.copy {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
